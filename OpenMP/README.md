@@ -53,48 +53,11 @@ where \(h\) is the grid spacing and \(N\) is the total number of grid points in 
 
 ---
 
-## How to Run
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-username/parallel-scientific-computing.git
-    cd parallel-scientific-computing
-    ```
-
-2. Compile the serial version:
-    ```bash
-    gcc serial_derivative.c -o serial -lm
-    ```
-
-3. Compile the OpenMP version:
-    ```bash
-    gcc openmp_derivative.c -fopenmp -o openmp -lm
-    ```
-
-4. Run the serial version:
-    ```bash
-    ./serial
-    ```
-
-5. Run the OpenMP version:
-    ```bash
-    export OMP_NUM_THREADS=2
-    ./openmp
-    ```
-
----
 
 ## Results
 
-- Analytical vs numerical derivative plots are available in the `plots/` folder.
-- Performance comparison for different thread counts is presented in `performance/`.
-
----
-
-## Requirements
-
-- GCC with OpenMP support
-- Python with `matplotlib` for plotting (optional but recommended)
+- Analytical vs numerical derivative plots are available in the `Report.pdf`.
+- Performance comparison for different thread counts is also presented in.
 
 ---
 
