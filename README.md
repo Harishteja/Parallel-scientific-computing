@@ -1,6 +1,6 @@
 # Parallel-scientific-computing
 
-# Hybrid_MPI_OpenMP
+## Hybrid_MPI_OpenMP
 Unsteady heat conduction problems in 2D and 3D domains will be solved and parallelized using a
 hybrid parallel programming paradigm combining Message Passing Interface (MPI) and Open
 Multi-Processing (OpenMP) and then parallel programs for MPI and OpenMP solely will be
