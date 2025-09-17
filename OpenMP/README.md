@@ -124,15 +124,7 @@ where $\Delta x = \Delta y = h$.
 
 ## Contact
 
-For any questions or suggestions, feel free to open an issue or contact the repository maintainer.
+For any questions or suggestions, feel free to open an issue or contact me.
 
-## License
 
-This project is open-source and available under the MIT License.
-
----
-
-## Contact
-
-For any questions or suggestions, please feel free to open an issue or contact the repository maintainer.
 
