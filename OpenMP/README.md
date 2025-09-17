@@ -35,7 +35,6 @@ $$
 
 where \(h\) is the grid spacing and \(N\) is the total number of grid points in the \(x\)-direction.
 
----
 
 ## Part (a) – Serial Implementation
 
@@ -43,7 +42,6 @@ where \(h\) is the grid spacing and \(N\) is the total number of grid points in 
 - The numerical derivative is compared with the analytical solution.
 - Results are plotted for \(N = 25\).
 
----
 
 ## Part (b) – OpenMP Implementation
 
@@ -51,7 +49,6 @@ where \(h\) is the grid spacing and \(N\) is the total number of grid points in 
 - Numerical and analytical solutions are plotted for \(N = 100\) using **2 threads**.
 - Performance is evaluated by plotting the time taken for \(N = 1000\) using **2, 4, and 8 threads**.
 
----
 
 
 ## Code and Report
@@ -86,7 +83,6 @@ $$
 
 where $\Delta x = \Delta y = h$.
 
----
 
 ## Part (a) – Serial Gauss-Seidel Implementation
 
@@ -95,7 +91,6 @@ where $\Delta x = \Delta y = h$.
 - The numerical solution is iterated until it is within 1% of the exact solution.
 - The numerical and analytical solutions are plotted for $y = 0.5$.
 
----
 
 ## Part (b) – OpenMP Implementation
 
@@ -103,7 +98,6 @@ where $\Delta x = \Delta y = h$.
   1. **Diagonal approach**
   2. **Red-black coloring approach**
 
----
 
 ## Part (c) – Verification and Performance Study
 
@@ -112,7 +106,6 @@ where $\Delta x = \Delta y = h$.
 - The time taken by both serial and parallel solvers is plotted as a function of grid size ($h$).
 - The performance improvement and the better parallel method are analyzed.
 
----
 
 ## Part (d) – Thread Scaling Study
 
@@ -120,7 +113,6 @@ where $\Delta x = \Delta y = h$.
 - The tests are conducted for $N_{\text{threads}} = 2, 4, 8, 16$.
 - The performance and scalability of both parallel methods are compared.
 
----
 
 ## Code and Report
 
