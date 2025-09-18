@@ -9,3 +9,5 @@ communication and OpenMP for communication within each node.Different levels of 
 can be achieved by combining MPI and OpenMP parallelization.To evaluate the performance of the
 hybrid code, parameters like efficiency, execution time, speed up will be evaluated and plotted to
 Compare the hybrid MPI-OpenMP approach against solely MPI and OpenMP implementations.
+## MPI
+This repository contains MPI-based parallel solvers for a variety of scientific computing problems. Implementations include Jacobi and Gauss–Seidel (red–black) methods for Poisson’s equation, as well as first-order upwind and third-order QUICK schemes for convection problems. Both serial and MPI versions are provided to compare accuracy, convergence, and scalability. For detailed source codes and performance results, please see the MPI/ directory, which contains the codes and the full report (report.pdf).
