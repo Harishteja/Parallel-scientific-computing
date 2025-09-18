@@ -80,4 +80,57 @@ $$
    - Performance comparisons of serial vs. MPI are included in the report.  
    - All plots show good agreement of numerical solutions with the analytical solution.
 
+# Poisson Solver — Jacobi & Gauss–Seidel (Red–Black) — Serial & MPI
+
+## Overview
+
+This repository contains serial and MPI implementations to solve the Poisson equation
+
+$$
+\nabla^2 \phi = -q,\qquad q(x,y) = x^2 + y^2
+$$
+
+on a rectangular domain with the boundary conditions shown below. The solvers implemented are:
+
+- Jacobi iterative method (serial & MPI)
+- Gauss–Seidel with red–black coloring (serial & MPI)
+  
+   <img width="600" height="412" alt="Screenshot from 2025-09-18 10-10-58" src="https://github.com/user-attachments/assets/4e05a9d5-e99b-464a-89b2-2a8a4b2f9776" />
+
+Double-precision arithmetic is used throughout. A detailed report with results, convergence analysis, and plots is provided in `report.pdf`.
+
+---
+
+## Governing equation & discretization
+
+The Poisson equation is discretized on a uniform Cartesian mesh with $\Delta x=\Delta y=h$. Using standard 5-point finite differences and Jacobi/Gauss–Seidel iterations, the update formula can be written as
+
+$$
+\phi_{i,j}^{(k+1)} = \frac{1}{4}\Big(\phi_{i+1,j}^{(k)} + \phi_{i-1,j}^{(k+1/k)} + \phi_{i,j+1}^{(k)} + \phi_{i,j-1}^{(k+1/k)}\Big) + \frac{h^2}{4}\,q_{i,j},
+$$
+
+where the notation $\phi^{(k+1/k)}$ indicates that Jacobi uses the previous iterate for all neighbors, while Gauss–Seidel uses already-updated neighbors when available.
+
+On the boundary at \(x=1\) (right boundary in the domain image) the first derivative is approximated with the second-order one-sided formula:
+
+$$
+\phi_i = \frac{4\phi_{i-1} - \phi_{i-2}}{3}.
+$$
+
+An initial guess of \(\phi(x,y)=0\) is used for all runs.
+
+---
+
+## Results (summary)
+
+- For \(h=0.1\) (serial Jacobi), the solver converged to the \(10^{-4}\) tolerance in **N\_iter\_serial** iterations (see `report.pdf` for numeric values and plots).
+- For \(h=0.01\) (MPI Jacobi), convergence histories and iteration counts are reported for \(p=2,4,8\); parallel solutions match serial solutions to within numerical precision (plots in `report.pdf`).
+- Gauss–Seidel (red–black) consistently required **fewer iterations** than Jacobi for the same tolerance; comparative plots and tables are provided in the report.
+- Strong-scaling tests for \(h=0.005\) were run with \(p=2,4,8,16\). Speed-up curves and discussion are included in `report.pdf`. Observations:
+  - GS red–black generally shows faster convergence (lower iterations) but more synchronization overhead in parallel.
+  - Jacobi is easier to parallelize (less synchronization) but needs more iterations.
+
+Please refer to `report.pdf` for full plots, numerical values, and analysis.
+
+
 
